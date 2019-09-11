@@ -1,0 +1,8 @@
+$main-color: hsl(179, 62%, 43%);
+$light-color: hsl(218, 22%, 67%);
+$bright-color: hsl(71, 73%, 54%);
+$body-background-color:hsl(204, 43%, 93%);
+
+@mixin easeOut {
+    transition: all 0.5s ease-out;
+}

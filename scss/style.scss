@@ -1,0 +1,180 @@
+@import 'config';
+
+//General styles
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    background: $body-background-color;
+    // font-size: 10px;
+    font-family: 'Karla',
+        sans-serif;
+}
+
+body,
+html {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+//Card
+#card {
+    overflow: hidden;
+    margin: auto 1rem;
+    display: grid;
+    grid-template-areas:
+        'join join'
+        'subs why';
+    grid-template-columns: repeat(2, 1fr);
+    border-collapse: separate;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px darken($body-background-color, 10%);
+
+    .join-section {
+        grid-area: join;
+        background: #fff;
+        padding: 2.5rem;
+
+        .main-heading {
+            color: $main-color;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .join-secondary-heading {
+            font-weight: 700;
+            font-size: 1rem;
+            color: $bright-color;
+            margin-bottom: 0.8rem;
+        }
+
+        .secondary-text {
+            color: darken($body-background-color, 10%);
+            font-weight: 400;
+            line-height: 1.5;
+            font-size: 1rem;
+        }
+    }
+
+    .subscription {
+        grid-area: subs;
+        background: $main-color;
+        padding: 2.5rem;
+
+        .secondary-heading {
+            color: #fff;
+            margin-bottom: 1.1rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .price {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: $body-background-color;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+
+            span {
+                color: #fff;
+                font-size: 3rem;
+                margin-right: 0.8rem;
+            }
+        }
+
+        .subscrition-text {
+            color: #fff;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            cursor: pointer;
+            background: $bright-color;
+            display: inline-block;
+            padding: 1rem 6.5rem;
+            border-radius: 5px;
+
+            a {
+                text-decoration: none;
+                color: #fff;
+            }
+
+            &:hover {
+                @include easeOut;
+                background: lighten($main-color, 10%);
+            }
+        }
+
+    }
+
+    .why {
+        grid-area: why;
+        background: lighten($main-color, 10%);
+        padding: 2.5rem;
+
+        .secondary-heading {
+            color: #fff;
+            margin-bottom: 1.3rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .about {
+            list-style: none;
+
+            li {
+                color: #fff;
+                font-size: 0.9rem;
+                margin: 0.2rem 0;
+            }
+        }
+    }
+}
+
+//Copyright
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+//Mobile
+@media screen and (max-width: 728px) {
+    #card {
+        display: grid;
+        grid-template-areas:
+            'join'
+            'subs'
+            'why';
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    #card {
+        .main-heading {
+            font-size: 1.5rem;
+        }
+    }
+
+    .subscription {
+        .btn {
+            a {
+                white-space: nowrap;
+            }
+        }
+    }
+}
