@@ -1,7 +1,7 @@
 What is this?
 This is the "Single price grid component" challenge from frontendmentor.io.
 
-Live version: single-priceia.netlify.com
+[Live version.](https://single-priceia.netlify.app)
 
 Font added in index.html
 Karla / weights: 400 / 700.
